@@ -1,0 +1,8 @@
+{
+  list(entity: "tasks", boundaries: {limitToLast: 3}, order: {orderByKey: true, reverse: true}) {
+    id
+    tasks {
+      id
+    }
+  }
+}

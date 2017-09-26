@@ -1,0 +1,20 @@
+{
+  "rules": {
+    /* Disable Everything  */
+    ".read"  : false,
+    ".write" : false,
+    "user": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      }
+    },
+    "infrastructure": {
+      "$uid": {
+        ".read": "(root.child('roles').child('admin').hasChild(auth.uid))",
+        ".write": "(root.child('roles').child('admin').hasChild(auth.uid))"
+      }
+    }
+  }
+}
+
